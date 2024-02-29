@@ -68,7 +68,7 @@ const Services = () => {
             initial='hidden' 
             animate='show' 
             exit='hidden'>
-            Swipe and slide the slider to explore the various domains where I've previously contributed.
+            Swipe and slide the slider to explore the various domains where I&apos;ve previously contributed.
           </motion.p>
         </div>
         <motion.div 

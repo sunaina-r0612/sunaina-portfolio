@@ -29,7 +29,7 @@ const Work = () => {
             animate='show' 
             exit='hidden'
             className="mb-4 max-w-[400px] mx-auto lg:mx-0">
-            Embarked on the rollercoaster of coding adventures! From a wild MarkEd project, practice realms, and real estate web escapades to crafting this portfolio. Even wrote code snippets for Mom and Dad's office chaos. Swipe, slide, and enjoy the coding rollercoaster! 🎢💻
+            Embarked on the rollercoaster of coding adventures! From a wild MarkEd project, practice realms, and real estate web escapades to crafting this portfolio. Even wrote code snippets for Mom and Dad&apos;s office chaos. Swipe, slide, and enjoy the coding rollercoaster! 🎢💻
           </motion.p>
         </div>
         <motion.div 

@@ -25,7 +25,7 @@ const Home = () => {
         animate="show" 
         exit='hidden' 
         className="h2">
-          Hey there <br/> I'm {' '}
+          Hey there <br/> I&apos;m {' '}
           <span className="text-accent">
             Sunaina!
           </span>
@@ -37,7 +37,7 @@ const Home = () => {
         animate="show" 
         exit='hidden' 
         className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-12">
-        Meet me, the tech wizard with a passion for pixels and a knack for learning at warp speed. As a tech enthusiast and designer, I turn coffee into code and ideas into interfaces faster than you can say "refresh rate." For a glimpse into my digital playground, browse through my portfolio. Let's connect for some seriously geeky, yet productive, interactions!
+        Meet me, the tech wizard with a passion for pixels and a knack for learning at warp speed. As a tech enthusiast and designer, I turn coffee into code and ideas into interfaces faster than you can say &quot;refresh rate.&quot; For a glimpse into my digital playground, browse through my portfolio. Let&apos;s connect for some seriously geeky, yet productive, interactions!
         </motion.p>
         {/*btn*/}
 
