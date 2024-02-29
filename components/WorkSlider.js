@@ -73,34 +73,29 @@ const WorkSlider = () => {
     // className='h-[280px] sm:h-[480px]'
     >
       {workSlider.slides.map((slide, index) => {
-        return(
+        return (
           <SwiperSlide key={index}>
             <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
-              {slide.images.map((image,index)=>{
+              {slide.images.map((image, imageIndex) => {
                 return (
-                <a href={image.link} target="blank">
-                <div 
-                  className="relative rounded-lg overflow-hidden flex items-center justify-center group" >
-                  {/* key={index} */}
-                  {/*images*/}
-                  <div className="flex items-center justify-center relative overflow-hidden">
-                  <Image src={image.path} width={500} height={300} alt=''/>
-
-                  {/*overlay gradient*/}
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
-                  </div>
-
-                  {/* Title */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="text-sm font-semibold">{image.title}</div>
-                  </div>
-                </div>
-                </a>)
+                  <a key={imageIndex} href={image.link} target="_blank">
+                    <div className="relative rounded-lg overflow-hidden flex items-center justify-center group">
+                      <div className="flex items-center justify-center relative overflow-hidden">
+                        <Image src={image.path} width={500} height={300} alt="" />
+                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-sm font-semibold">{image.title}</div>
+                      </div>
+                    </div>
+                  </a>
+                );
               })}
             </div>
           </SwiperSlide>
-        )
+        );
       })}
+
   </Swiper>
   );
 };
