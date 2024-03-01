@@ -226,67 +226,36 @@ const About = () => {
       </div>
       <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-          {/* {aboutData.map((item, itemIndex)=>{
-            (
-              <div
-                key ={itemIndex}
-                className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
-                onClick={() => setIndex(itemIndex)}>
-                {item.title}
-              </div>
-            );
-            })} */}
-            {aboutData.map((item, itemIndex) => (
-              <div
-                key={itemIndex}
-                className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
-                onClick={() => setIndex(itemIndex)}>
-                {item.title}
-              </div>
-            ))}
+          {aboutData.map((item) => (
+            <div
+              key={item.title} // Use unique value as key
+              className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
+              onClick={() => setIndex(itemIndex)}>
+              {item.title}
+            </div>
+          ))}
         </div>
         <div className="py-2 xl:py-6 flex flex-col gap-Y-2 xl:gap-Y-4 items-center xl:items-start">
-          {/* {aboutData[index].info.map((item, itemIndex) =>{
-            (
-              <div 
-                key={itemIndex}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60">
-                <div className="font-light">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>
-                  {item.stage}
-                </div>
-                <div className="flex gap-x-4">
-                  {item.icons?.map((icon,itemIndex)=>{
-                    <div className="text-xl">
-                      {icon}
-                    </div>
-                  })}
-                </div>
+          {aboutData[index].info.map((item) => (
+            <div 
+              key={item.title} // Use unique value as key
+              className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+            >
+              <div className="font-light">{item.title}</div>
+              <div className="hidden md:flex">-</div>
+              <div>{item.stage}</div>
+              <div className="flex gap-x-4">
+                {item.icons?.map((icon, iconIndex) => (
+                  <div className="text-xl" key={iconIndex}>
+                    {icon}
+                  </div>
+                ))}
               </div>
-            )
-          })} */}
-
-        {aboutData[index].info.map((item, itemIndex) => (
-          <div 
-            key={item.title}
-            className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
-          >
-            <div className="font-light">{item.title}</div>
-            <div className="hidden md:flex">-</div>
-            <div>{item.stage}</div>
-            <div className="flex gap-x-4">
-              {item.icons?.map((icon, iconIndex) => (
-                <div className="text-xl" key={iconIndex}>
-                  {icon}
-                </div>
-              ))}
             </div>
-          </div>
-        ))}
-
+          ))}
         </div>
       </div>
+
     </div>
   </div>);
 };
