@@ -226,34 +226,34 @@ const About = () => {
       </div>
       <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
       <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-        {aboutData.map((item, itemIndex) => (
-          <div
-            key={item.title + itemIndex} // Combined item title and itemIndex for a unique key
-            className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
-            onClick={() => setIndex(itemIndex)}>
-            {item.title}
+            {aboutData.map((item, itemIndex) => (
+              <div
+                key={`about_${item.title}_${itemIndex}`} // Ensure unique key by combining with a prefix
+                className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
+                onClick={() => setIndex(itemIndex)}>
+                {item.title}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="py-2 xl:py-6 flex flex-col gap-Y-2 xl:gap-Y-4 items-center xl:items-start">
-        {aboutData[index].info.map((item, infoIndex) => (
-          <div 
-            key={item.title + infoIndex} // Combined item title and infoIndex for a unique key
-            className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
-          >
-            <div className="font-light">{item.title}</div>
-            <div className="hidden md:flex">-</div>
-            <div>{item.stage}</div>
-            <div className="flex gap-x-4">
-              {item.icons?.map((icon, iconIndex) => (
-                <div className="text-xl" key={item.title + infoIndex + iconIndex}> {/* Combined keys for uniqueness */}
-                  {icon}
+          <div className="py-2 xl:py-6 flex flex-col gap-Y-2 xl:gap-Y-4 items-center xl:items-start">
+            {aboutData[index].info.map((item, infoIndex) => (
+              <div 
+                key={`info_${item.title}_${infoIndex}`} // Ensure unique key by combining with a prefix
+                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+              >
+                <div className="font-light">{item.title}</div>
+                <div className="hidden md:flex">-</div>
+                <div>{item.stage}</div>
+                <div className="flex gap-x-4">
+                  {item.icons?.map((icon, iconIndex) => (
+                    <div className="text-xl" key={`icon_${item.title}_${infoIndex}_${iconIndex}`}> {/* Ensure uniqueness */}
+                      {icon}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
         </div>
 
     </div>
