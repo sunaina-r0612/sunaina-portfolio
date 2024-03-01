@@ -225,39 +225,48 @@ const About = () => {
           </div>
         </div>
       </div>
+      // Your component code
       <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-          {aboutData.map((item, itemIndex) => (
-            <div
-              key={itemIndex} // Use itemIndex as the key
-              className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
-              onClick={() => setIndex(itemIndex)}>
-              {item.title}
-            </div>
-          ))}
+          {aboutData.map((item, itemIndex) => {
+            const key1 = uuidv4(); // Generate a unique key using uuid
+            return (
+              <div
+                key={key1}
+                className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
+                onClick={() => setIndex(itemIndex)}
+              >
+                {item.title}
+              </div>
+            );
+          })}
         </div>
         <div className="py-2 xl:py-6 flex flex-col gap-Y-2 xl:gap-Y-4 items-center xl:items-start">
-          {aboutData[index].info.map((item, subIndex) => (
-            <div 
-              key={subIndex+index} // Use subIndex as the key
-              className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
-            >
-              <div className="font-light">{item.title}</div>
-              <div className="hidden md:flex">-</div>
-              <div>{item.stage}</div>
-              <div className="flex gap-x-4">
-                {item.icons?.map((icon, iconIndex) => (
-                  <div className="text-xl" key={iconIndex+index}> {/* Use iconIndex as the key */}
-                    {icon}
-                  </div>
-                ))}
+          {aboutData[index].info.map((item) => {
+            const key2 = uuidv4(); // Generate a unique key using uuid
+            return (
+              <div
+                key={key2}
+                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+              >
+                <div className="font-light">{item.title}</div>
+                <div className="hidden md:flex">-</div>
+                <div>{item.stage}</div>
+                <div className="flex gap-x-4">
+                  {item.icons?.map((icon) => {
+                    const key3 = uuidv4(); // Generate a unique key using uuid
+                    return (
+                      <div className="text-xl" key={key3}>
+                        {icon}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
-
-
     </div>
   </div>);
 };
