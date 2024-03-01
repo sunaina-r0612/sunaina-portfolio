@@ -14,6 +14,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react";
 import CountUp from "react-countup";
 
@@ -226,9 +227,9 @@ const About = () => {
       </div>
       <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-          {aboutData.map((item, itemIndex) => (
+          {aboutData.map((item) => (
             <div
-              key={`about-${itemIndex}`} // Unique key for each item
+              key={uuidv4()} // Generate a unique key using uuid
               className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
               onClick={() => setIndex(itemIndex)}>
               {item.title}
@@ -236,17 +237,17 @@ const About = () => {
           ))}
         </div>
         <div className="py-2 xl:py-6 flex flex-col gap-Y-2 xl:gap-Y-4 items-center xl:items-start">
-          {aboutData[index].info.map((item, infoIndex) => (
+          {aboutData[index].info.map((item) => (
             <div 
-              key={`info-${infoIndex}`} // Unique key for each info item
+              key={uuidv4()} // Generate a unique key using uuid
               className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
             >
               <div className="font-light">{item.title}</div>
               <div className="hidden md:flex">-</div>
               <div>{item.stage}</div>
               <div className="flex gap-x-4">
-                {item.icons?.map((icon, iconIndex) => (
-                  <div className="text-xl" key={`icon-${infoIndex}-${iconIndex}`}> {/* Unique key for each icon */}
+                {item.icons?.map((icon) => (
+                  <div className="text-xl" key={uuidv4()}> {/* Generate a unique key using uuid */}
                     {icon}
                   </div>
                 ))}
