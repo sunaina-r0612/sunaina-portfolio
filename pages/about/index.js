@@ -236,9 +236,9 @@ const About = () => {
           ))}
         </div>
         <div className="py-2 xl:py-6 flex flex-col gap-Y-2 xl:gap-Y-4 items-center xl:items-start">
-          {aboutData[index].info.map((item) => (
+          {aboutData[index].info.map((item, index) => (
             <div 
-              key={item.title} // Use unique value as key
+              key={item.title + index} // Use unique value as key
               className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
             >
               <div className="font-light">{item.title}</div>
