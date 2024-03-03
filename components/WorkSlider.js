@@ -63,12 +63,14 @@ import Image from "next/image";
 
 const WorkSlider = () => {
   return (
-    <Swiper
-      spaceBetween={10}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Pagination]}
+  <Swiper
+    spaceBetween={10}
+    pagination={{
+      clickable: true,
+    }}
+
+    modules={[Pagination]}
+    // className='h-[280px] sm:h-[480px]'
     >
       {workSlider.slides.map((slide, index) => {
         return (
@@ -91,9 +93,8 @@ const WorkSlider = () => {
           </SwiperSlide>
         );
       })}
-    </Swiper>
+  </Swiper>
   );
 };
-
 
 export default WorkSlider;
