@@ -1,4 +1,4 @@
-import Image from "next/image";
+import OptimizedImage from 'next-optimized-images';
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 
@@ -6,7 +6,7 @@ const ProjectsBtn = () => {
   return (
   <div className="mx-auto xl:mx-0">
     <Link href={'/work'} className="relative w-[180px] flex justify-center items-center bg-circleStar bg-center bg-no-repeat group">
-      <Image
+      <OptimizedImage
         src={'/rounded-text.png'}
         width={121}
         height={127}
