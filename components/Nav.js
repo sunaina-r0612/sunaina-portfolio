@@ -16,7 +16,7 @@ export const navData = [
   { name: 'work', path: '/work', icon: <HiViewColumns /> },
   {
     name: 'Lessons',
-    path: '/testimonials',
+    path: '/lessons',
     icon: <HiChatBubbleBottomCenterText />,
   },
   {
